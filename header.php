@@ -2,12 +2,12 @@
     <div>
         <div class="div-left">
             <a class="navbar-brand" href="#">
-                <img class="logo-one" alt="Logo" src="Images\logo 1.png">
+                <img class="logo-one" alt="Logo" src="logo 1.png">
             </a>
         </div>
         <div class="div-center">
             <a class="navbar-brand" href="#">
-                <img class="logo-two" alt="Container World" src="Images\logo 2.png">
+                <img class="logo-two" alt="Container World" src="logo 2.png">
             </a>
         </div>
     </div>
