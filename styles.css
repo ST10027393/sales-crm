@@ -1,0 +1,343 @@
+:root{
+    --primary-red: #ED2324;
+    --primary-blue: #6EC1E4;
+    --secondary-red: #cf2e2e;
+    --secondary-blue: #0d6efd;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Header styling */
+header {
+    background-color: #fff;
+    color: #000; /* Change text color to black */
+    padding: 10px 0;
+    text-align: center; /* Center align content */
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; /* Center align logos */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-div {
+    display: inline-block; /* Make logo divs inline */
+    vertical-align: middle; /* Align vertically within the div */
+    margin-right: 20px;
+}
+
+.logo-one {
+    max-width: 75px;
+}
+
+.logo-two {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.div-left {
+    display: flex;
+    align-items: left;
+    display: inline-block;
+}
+
+.div-center {
+    height: 100%;
+    display: inline-block;
+}
+
+nav {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Change color on hover and when active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-red);
+}
+
+
+/* Footer styles */
+footer {
+background-color: var(--primary-blue);
+padding: 1rem;
+position: fixed;
+bottom: 0;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #fff;
+}
+
+.footer-left {
+flex-grow: 1;
+}
+
+.footer-contact {
+display: block;
+margin-bottom: 0.5rem;
+}
+
+.footer-center {
+flex-grow: 2;
+text-align: center;
+}
+
+.footer-nav {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.footer-item {
+display: inline-block;
+margin-right: 1rem;
+}
+
+.footer-link {
+color: #fff;
+font-weight: bold;
+text-decoration: none;
+}
+
+.footer-link:hover {
+text-decoration: underline;
+color: var(--primary-red);
+}
+
+.footer-right {
+flex-grow: 2;
+text-align: right;
+}
+
+.social-icons {
+display: flex;
+right: 20%; 
+align-items: center;
+}
+
+
+.social-icon {
+color: #fff;
+margin-left: 0.5rem;
+font-size: 1.5rem;
+text-decoration: none;
+}
+
+.social-icon:hover {
+color: var(--primary-red);
+}
+
+/* New styles for the login button */
+.login-button {
+    background-color: var(--primary-blue);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: var(--primary-blue);
+}
+
+/*Progress*/
+
+.progressbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    counter-reset: step;
+}
+
+.progressbar::before, .progress{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+}
+
+.progress{
+    background-color: var(--primary-red);
+    width: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.progress-step{
+    width: 35px;
+    height: 35px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-right: 40px;
+}
+
+.progress-step::before{
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: .80rem;
+    color: #666;
+}
+
+.progress-step.active {
+    background-color: var(--primary-blue);
+    color: #f3f3f3;
+}
+
+.progress-step.completed {
+    background-color: var(--primary-red); 
+    color: #f3f3f3;
+}
+
+.progress-step.after-sale{
+    margin-right: 0;
+}
+
+
+/* Form */
+.form {
+    margin: 0 auto;
+    border-radius: .35rem;
+    padding: 1.5rem;
+}
+
+.form-step{
+    display: none;
+    margin-top: 30px;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+@keyframes animate {
+    from{
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.input-group{
+    margin: 2rem 0;
+}
+
+.form-step.active{
+    display: block;
+}
+
+
+.form-step.opp{
+    margin-top: 0;
+}
+/* Buttons */
+.btns-group{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.btn{
+    padding: 0.75rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-blue);
+    color: #f3f3f3;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.btn:active{
+    transform: scale(.98);
+}
+
+.btn-save {
+    background-color: var(--primary-blue);
+}
+
+.btn-lost {
+    background-color: #000;
+}
+
+.btn-next {
+    background-color: var(--primary-red);
+}
+
+.btn-save:hover{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-blue);
+}
+
+.btn-lost:hover{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #000;
+}
+
+.btn-next:hover{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-red);
+}
